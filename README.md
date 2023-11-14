@@ -9,20 +9,25 @@ Chaque joueur incarne un serpent contrôlable qui peut s'orienter dans les 4 dir
 
 L'objectif de chaque joueur est d'augmenter sa longueur en consommant de la nourriture qui apparait dans l'arène, mais aussi d'éliminer les autres joueurs de l'arène en les forçant à cogner leur tête contre le corps de son serpent.
 
+Toutes les minutes, un nouveau lot de nourriture apparait sur la carte. Soyez le premier à la récupérer !
+*(la nourriture est consommée automatiquement lorsque la tête du serpent passe sur la même case)*
+
 Attention ! Pour les autres joueurs, c'est VOUS qui êtes l'ennemi !
 
 
 **_suite en cours de rédaction_**
 ## 🎮 Use cases
-- pour l'administrateur
+### 🐉 Administrateur
 Expliquer ce que peut/doit faire un administrateur qui souhaite lancer/administrer une arène de jeu avec des apprenants 
 
-- pour le joueur
-Renvoyer vers README API
-
-## 🖧 Architecture matériel 
-(optionnel, peut être décrit avec le diagramme de séquence) 
-Schéma overview présentant les machines et protocoles (serveurs, clients, broker) avec texte expliquant le choix des technologies 
+### 🐍 Joueur (apprenant)
+- J'apparais avec une longueur de 4 (ma tête, deux segments de corps, ma queue)
+- Je peux gagner des points en mangeant de la nourriture
+- Je peux gagner des points en éliminant un autre joueur
+- Si je meurs, chacun de mes segments a 1 chance sur 3 de lâcher de la nourriture
+- Je peux connaitre la longueur et la position de la tête d'un joueur adverse n'importe où sur la carte
+- Je peux connaitre l'emplacement de toute la nourriture sur la carte
+- Si je touche le bord de la carte, le corps d'un joueur ou mon propre corps, je meurs
 
 ## 📞 Diagramme de séquence
 Expliquer les points suivants
@@ -50,8 +55,12 @@ Step by step : commandes à executer par l'administrateur, paquets à installer 
 Ce qui reste à faire priorisé dans le temps
 
 ## 🧑‍💻 Auteur(s)
-Rendre à César ce qui appartient à César !
-N'oublier pas de citer toutes les personnes qui ont contribué directement (vous) ou indirectement (les auteurs des dépendances de votre projet, des ressources récupérées ou générées ...)
+- DENNETIERE Célia
+- GUILLOT Valentin
+- LECROISEY Jean-Victor
+- MAFILLE Léo
+
+## 🙏 Remerciements
 
 ## ⚖️ License
 S'appuyer sur https://choosealicense.com/ ou la doc de github
