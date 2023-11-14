@@ -1,12 +1,22 @@
 import j2l.pytactx.agent as pytactx
+import random
 
-agent = pytactx.Agent(playerId=input("👾 id: "),
-						arena=input("🎲 arena: "),
+arbitre = pytactx.Agent(playerId=input("👾 id: "),
+						arena="rattleslide",
 						username="demo",
-						password=input("🔑 password: "),
+						password="demo",
 						server="mqtt.jusdeliens.com",
 						verbosity=2)
 
+arbitre.fire(False)
+
+def AddFood(number_food_chunk):
+	for i in range (number_food_chunk):
+		spawn_height = random.randint(0, arbitre.gridRows)
+		spawn_width = random.randint(0, arbitre.gridColumns)
+		arbitre.ruleArena()
+
+
 while True:
-	agent.update()
-	agent.lookAt((agent.dir + 1) % 4)
+	arbitre.update()
+	arbitre.lookAt((arbitre.dir + 1) % 4)
