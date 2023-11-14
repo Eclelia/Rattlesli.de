@@ -61,6 +61,7 @@ Ce qui reste à faire priorisé dans le temps
 - MAFILLE Léo
 
 ## 🙏 Remerciements
+Nous remercions notre professeur Julien Arne pour son travail, sa patience, ainsi que son aide tout le long du développement de ce jeu.
 
 ## ⚖️ License
 S'appuyer sur https://choosealicense.com/ ou la doc de github
