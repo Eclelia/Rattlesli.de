@@ -9,14 +9,37 @@ arbitre = pytactx.Agent(playerId=input("👾 id: "),
                         server="mqtt.jusdeliens.com",
                         verbosity=2)
 
-arbitre.ruleArena("map", 1)
-arbitre.ruleArena("mapImgs", [1, "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3c77f9db-8565-47a2-b216-955e5b9840e9/dbpkj28-ff95a573-79e1-41bf-9540-396807ce7204.png/v1/fill/w_400,h_566/pixel_pumpkin_by_tanmo_dbpkj28-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjNzdmOWRiLTg1NjUtNDdhMi1iMjE2LTk1NWU1Yjk4NDBlOVwvZGJwa2oyOC1mZjk1YTU3My03OWUxLTQxYmYtOTU0MC0zOTY4MDdjZTcyMDQucG5nIiwiaGVpZ2h0IjoiPD01NjYiLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzNjNzdmOWRiLTg1NjUtNDdhMi1iMjE2LTk1NWU1Yjk4NDBlOVwvdGFubW8tNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.IgQBFaw1ySPYQBMiAB9mBgClLCznFzmCODo3LxR-Syk"])
+arbitre.ruleArena("mapImgs", ["", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3c77f9db-8565-47a2-b216-955e5b9840e9/dbpkj28-ff95a573-79e1-41bf-9540-396807ce7204.png/v1/fill/w_400,h_566/pixel_pumpkin_by_tanmo_dbpkj28-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjNzdmOWRiLTg1NjUtNDdhMi1iMjE2LTk1NWU1Yjk4NDBlOVwvZGJwa2oyOC1mZjk1YTU3My03OWUxLTQxYmYtOTU0MC0zOTY4MDdjZTcyMDQucG5nIiwiaGVpZ2h0IjoiPD01NjYiLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzNjNzdmOWRiLTg1NjUtNDdhMi1iMjE2LTk1NWU1Yjk4NDBlOVwvdGFubW8tNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.IgQBFaw1ySPYQBMiAB9mBgClLCznFzmCODo3LxR-Syk"])
+
+arbitre.ruleArena("mapFriction",[0.0, 0.0])
 
 arbitre.fire(False)
 
-def AddFoodV2(probabilite):
-	...
+def AddFoodV2(frequency):
+	
+	"""
+	Function AddFoodV2
 
+	Create fruits on the arena
+
+	Arguments :
+
+	frequency - Wanted frequency of fruits on map
+
+	"""
+	
+	resetArenaFruits()
+	arbitre.update()
+	map = arbitre.map
+	number_food_chunk = len(map)*len(map[0])*frequency
+	number_food_chunk = int(number_food_chunk)
+	for i in range(number_food_chunk):
+		x = random.randint(0, len(map[0])-1)
+		y = random.randint(0,len(map)-1)
+		if map[y][x] in [0,1] :
+			map[y][x] = 1
+	arbitre.ruleArena('map', map)
+	arbitre.update()
 
 def AddFood(number_food_chunk):
 	
@@ -37,7 +60,6 @@ def AddFood(number_food_chunk):
 	for i in range(number_food_chunk):
 		x = random.randint(0, len(map[0])-1)
 		y = random.randint(0,len(map)-1)
-		print(f"x = {x} \n y = {y}")
 		if map[y][x] in [0,1] :
 			map[y][x] = 1
 	arbitre.ruleArena('map', map)
@@ -109,5 +131,5 @@ def resetArenaFruits():
 resetArenaFruits()
 
 while True:
-	AddFood(25)
-	time.sleep(1)
+	AddFoodV2(0.1)
+	time.sleep(5)
