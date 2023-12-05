@@ -9,7 +9,7 @@ arbitre = pytactx.Agent(playerId=input("👾 id: "),
                         server="mqtt.jusdeliens.com",
                         verbosity=2)
 
-arbitre.ruleArena("mapImgs", ["", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3c77f9db-8565-47a2-b216-955e5b9840e9/dbpkj28-ff95a573-79e1-41bf-9540-396807ce7204.png/v1/fill/w_400,h_566/pixel_pumpkin_by_tanmo_dbpkj28-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjNzdmOWRiLTg1NjUtNDdhMi1iMjE2LTk1NWU1Yjk4NDBlOVwvZGJwa2oyOC1mZjk1YTU3My03OWUxLTQxYmYtOTU0MC0zOTY4MDdjZTcyMDQucG5nIiwiaGVpZ2h0IjoiPD01NjYiLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzNjNzdmOWRiLTg1NjUtNDdhMi1iMjE2LTk1NWU1Yjk4NDBlOVwvdGFubW8tNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.IgQBFaw1ySPYQBMiAB9mBgClLCznFzmCODo3LxR-Syk"])
+arbitre.ruleArena("mapImgs", ["", "https://cdn.discordapp.com/attachments/887336850719641651/1181522395509575701/fraise.png?ex=65815d7a&is=656ee87a&hm=61ad4520a6ad43c56c2f122bc0df9346e7b462dd4cf750076d4e04645bc8250b&"])
 
 arbitre.ruleArena("mapFriction",[0.0, 0.0])
 
@@ -131,5 +131,5 @@ def resetArenaFruits():
 resetArenaFruits()
 
 while True:
-	AddFoodV2(0.1)
-	time.sleep(5)
+	AddFoodV2(0.05)
+	time.sleep(25)
