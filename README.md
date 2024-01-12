@@ -23,7 +23,7 @@ Attention ! Pour les autres joueurs, c'est VOUS qui êtes l'ennemi !
 Expliquer ce que peut/doit faire un administrateur qui souhaite lancer/administrer une arène de jeu avec des apprenants 
 
 ### 🐍 Joueur (apprenant)
-- J'apparais avec une longueur de 4 (ma tête, deux segments de corps, ma queue)
+- J'apparais avec une longueur de 3 (ma tête, un segment de corps, ma queue)
 - Je peux gagner des points en mangeant de la nourriture
 - Je peux gagner des points en éliminant un autre joueur
 - Si je meurs, chacun de mes segments a 1 chance sur 3 de lâcher de la nourriture
