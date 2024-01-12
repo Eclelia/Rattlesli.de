@@ -9,6 +9,8 @@ Chaque joueur incarne un serpent contrôlable qui peut s'orienter dans les 4 dir
 
 L'objectif de chaque joueur est d'augmenter sa longueur en consommant de la nourriture qui apparait dans l'arène, mais aussi d'éliminer les autres joueurs de l'arène en les forçant à cogner leur tête contre le corps de son serpent.
 
+Attention car vous bougez automatiquement, il faut donc prévoir ses mouvements ! 
+
 Toutes les minutes, un nouveau lot de nourriture apparait sur la carte. Soyez le premier à la récupérer !
 *(la nourriture est consommée automatiquement lorsque la tête du serpent passe sur la même case)*
 
